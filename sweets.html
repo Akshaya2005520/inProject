@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweets Varieties - FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Reusing styles from pizza-detail.html as they are generic for cards */
+        .main-content-area {
+            flex-grow: 1;
+            padding: 20px;
+            background-color:  rgba(128, 181, 243, 0.651);/* Or your preferred background */
+        }
+        .detail-container { /* Changed class name slightly for generality */
+            max-width: 100%;
+            margin: 30px auto;
+            background-color: var(--whitecolor);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgb(235, 234, 234);
+        }
+        .detail-container h1 {
+            color: var(--color1);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Grid Styles (reused) */
+        .item-grid { /* Changed class name slightly for generality */
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            grid-auto-columns: 280px;
+            gap: 25px;
+            margin-top: 20px;
+            padding-right: 15px;
+            width: max-content;
+        }
+
+        .item-card { /* Changed class name slightly for generality */
+            background-color: #c0cbf0; /* White background for cards */
+            border-radius: 8px;
+                border: 1px solid #666262;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-card-content h3 {
+            font-size: 1.4rem;
+            color: var(--blackcolor);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .item-description-variety { /* Reused style name */
+            font-size: 0.9rem;
+            color: #0f0f0f;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .item-rating { /* Changed class name slightly for generality */
+            display: flex;
+            align-items: center;
+            color: #f39c12;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .item-rating ion-icon {
+            margin-right: 4px;
+        }
+
+        .item-rating span {
+            color: #777;
+            margin-left: 5px;
+        }
+
+        .item-cost { /* Changed class name slightly for generality */
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color1);
+            margin-bottom: 10px;
+        }
+        .btn-add-to-cart-list { /* Reused style name */
+            background-color: var(--color2);
+            color: var(--whitecolor);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+        .btn-add-to-cart-list:hover {
+            background-color: #e9a800;
+        }
+        .back-to-menu-link { /* Reused style name */
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--color2);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-to-menu-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<div>
+
+    <div class="sidebar">
+        <!--sidebar-->
+        <div class="logo">
+            <img src="assests/images/LOGO.png" alt="Logo">
+        </div>
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="help.html"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="detail-container">
+            <!-- Main Navbar (copied from index.html for consistency) -->
+            <div class="main-navbar">
+                <!--menu when appear on ph-->
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <!--searchbar-->
+                <div class="search">
+                    <input type="text" id="mainSearchInput" placeholder="Search for Sweets...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div><br>
+            <h1>Explore Our Sweets Varieties</h1>
+
+                <div class="item-grid">
+                    <!-- Sweet 1: Gulab Jamun -->
+                    <div class="item-card">
+                        <img src="assests/images/gul.webp" alt="Gulab Jamun"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Gulab Jamun</h3>
+                            <p class="item-description-variety">
+                                Soft and spongy milky balls soaked in rose-flavored sugar syrup.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(300+)</span>
+                            </div>
+                            <div class="item-cost">$10.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 2: Rasgulla -->
+                    <div class="item-card">
+                        <img src="assests/images/ras.jpg" alt="Rasgulla"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Rasgulla</h3>
+                            <p class="item-description-variety">
+                                Chewy cheese balls cooked in light syrup.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(280+)</span>
+                            </div>
+                            <div class="item-cost">$8.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 3: Jalebi -->
+                    <div class="item-card">
+                        <img src="assests/images/Jaleb.webp" alt="Jalebi"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Jalebi</h3>
+                            <p class="item-description-variety">
+                                Crispy spirals dipped in saffron syrup.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(190+)</span>
+                            </div>
+                            <div class="item-cost">$7.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 4: Laddu -->
+                    <div class="item-card">
+                        <img src="assests/images/BesanLadooFeaturedImage.jpg" alt="Laddu"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Besan Laddu</h3>
+                            <p class="item-description-variety">
+                                Gram flour balls with aromatic ghee.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.9 <span>(250+)</span>
+                            </div>
+                            <div class="item-cost">$12.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Sweet 5: Barfi -->
+                    <div class="item-card">
+                        <img src="assests/images/kaju.jpg" alt="Barfi"> 
+                        <div class="item-card-content">
+                            <h3>Kaju Barfi</h3>
+                            <p class="item-description-variety">
+                                Diamond-shaped cashew fudge.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(220+)</span>
+                            </div>
+                            <div class="item-cost">$15.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 6: Halwa -->
+                    <div class="item-card">
+                        <img src="assests/images/gajar.webp" alt="Halwa"> 
+                        <div class="item-card-content">
+                            <h3>Gajar ka Halwa</h3>
+                            <p class="item-description-variety">
+                                Sweet carrot pudding.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(180+)</span>
+                            </div>
+                            <div class="item-cost">$9.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 7: Peda -->
+                    <div class="item-card">
+                        <img src="assests/images/peda.jpg" alt="Peda">  <!-- Replace with your image -->
+                        <div class="item-card-content">
+                            <h3>Peda</h3>
+                            <p class="item-description-variety">
+                                Condensed milk-based sweet, often flavored with cardamom or saffron.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(150+)</span>
+                            </div>
+                            <div class="item-cost">$9.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 8: Mysore Pak -->
+                    <div class="item-card">
+                        <img src="assests/images/mysore.jpg" alt="Mysore Pak">  <!-- Replace with your image -->
+                        <div class="item-card-content">
+                            <h3>Mysore Pak</h3>
+                            <p class="item-description-variety">
+                                A rich, fudge-like sweet made from gram flour, ghee, and sugar syrup.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(120+)</span>
+                            </div>
+                            <div class="item-cost">$11.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 9: Rasmalai -->
+                    <div class="item-card">
+                        <img src="assests/images/rasmalai_recipe.jpg" alt="Rasmalai">  <!-- Replace with your image -->
+                        <div class="item-card-content">
+                            <h3>Rasmalai</h3>
+                            <p class="item-description-variety">
+                                Cottage cheese patties soaked in sweetened, thickened milk flavored with cardamom and nuts.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(200+)</span>
+                            </div>
+                            <div class="item-cost">$14.75</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 10: Kheer -->
+                    <div class="item-card">
+                        <img src="assests/images/kheer.jpg" alt="Kheer">  <!-- Replace with your image -->
+                        <div class="item-card-content">
+                            <h3>Kheer</h3>
+                            <p class="item-description-variety">
+                                A rice pudding made with milk, rice, sugar, and flavored with cardamom and nuts.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(180+)</span>
+                            </div>
+                            <div class="item-cost">$8.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 11: Kaju Katli -->
+                    <div class="item-card">
+                        <img src="assests/images/kajuka.jpeg" alt="Kaju Katli">
+                        <div class="item-card-content">
+                            <h3>Kaju Katli</h3>
+                            <p class="item-description-variety">
+                                Cashew nut diamonds, a classic Indian sweet.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(190+)</span>
+                            </div>
+                            <div class="item-cost">$13.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 12: Motichoor Laddu -->
+                    <div class="item-card">
+                        <img src="assests/images/motichoor_ladoo_indian_sweet_03.jpg" alt="Motichoor Laddu">
+                        <div class="item-card-content">
+                            <h3>Motichoor Laddu</h3>
+                            <p class="item-description-variety">
+                                Small, syrupy balls made from gram flour.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(170+)</span>
+                            </div>
+                            <div class="item-cost">$11.75</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 13: Petha -->
+                    <div class="item-card">
+                        <img src="assests/images/petha of agra.jpg" alt="Petha">
+                        <div class="item-card-content">
+                            <h3>Petha</h3>
+                            <p class="item-description-variety">
+                                Translucent, candy-like sweet made from ash gourd.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.4 <span>(130+)</span>
+                            </div>
+                            <div class="item-cost">$7.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 14: Gulab Jamun with Rabri -->
+                    <div class="item-card">
+                        <img src="assests/images/rabdi.jpg" alt="Gulab Jamun with Rabri">
+                        <div class="item-card-content">
+                            <h3>Gulab Jamun with Rabri</h3>
+                            <p class="item-description-variety">
+                                Classic Gulab Jamun served with creamy and rich Rabri.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(160+)</span>
+                            </div>
+                            <div class="item-cost">$14.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 15: Malpua -->
+                    <div class="item-card">
+                        <img src="assests/images/malpua-recipe-st.webp" alt="Malpua">
+                        <div class="item-card-content">
+                            <h3>Malpua</h3>
+                            <p class="item-description-variety">
+                                Deep-fried pancakes dipped in sugar syrup, often served with Rabri.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(140+)</span>
+                            </div>
+                            <div class="item-cost">$9.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Sweet 16: Shrikhand -->
+                    <div class="item-card">
+                        <img src="assests/images/mango.jpeg" alt="Shrikhand">
+                        <div class="item-card-content">
+                            <h3>Shrikhand</h3>
+                            <p class="item-description-variety">
+                                A creamy dessert made from strained yogurt, sugar, and cardamom.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(110+)</span>
+                            </div>
+                            <div class="item-cost">$8.75</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+            <a href="index.html#main-menus-section" class="back-to-menu-link"> <ion-icon name="arrow-back-outline"></ion-icon> Back to Menu</a>
+        </div>
+
+
+    <!-- Footer (copy from index.html or other pages if you have a standard one) -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart-list');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Find the parent card to get item details
+                    const card = event.target.closest('.item-card');
+                    
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPriceText = card.querySelector('.item-cost').textContent;
+                    const itemImage = card.querySelector('img').src;
+
+                    const cartItem = {
+                        name: itemName,
+                        price: parseFloat(itemPriceText.replace('$', '')),
+                        image: itemImage,
+                        quantity: 1
+                    };
+
+                    // Get existing cart from localStorage or initialize an empty array
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Check if item already exists in cart to avoid duplicates
+                    const existingItem = cart.find(item => item.name === cartItem.name);
+
+                    if (existingItem) {
+                        alert(`${itemName} is already in your cart!`);
+                    } else {
+                        cart.push(cartItem);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        alert(`Added ${itemName} to your cart!`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

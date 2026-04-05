@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="Assests/css/style.css  "/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  
+    <div class="sidebar">
+    <!--sidebar-->
+   
+        <!--logo-->
+      <div class="logo">
+
+     
+            <img src="Assests/images/logo.jpg"alt="Logo">
+        </div>
+        <!--title-->
+       
+            
+      
+        <!--menus-->
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="#"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+                <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+                <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a> 
+            </div> 
+       
+    </div>
+<div class="video">
+                   <video autoplay loop muted plays-inline>
+                    <source src="Assests/images/food-promo-video-manual-mode-productions-ytshorts.savetube.me.mp4"type="video/mp4">
+                   </video>
+                   </div>
+    <center>         
+    <div class="content">
+
+            <div class="content-left">
+                <div class="info">
+
+                    <h2>Order Your Best<br>Food Anytime</h2>
+                    <p>Hey, Our delicious food is waiting for you, <br> We are always near to you with fresh item of food</p>
+                </div>
+                <button>Explore Food</button>
+            </div>
+            <div class="content-right">
+                <img src="Assests/images/rotate.webp">
+            </div>
+        </div>
+    
+            </center>  
+    <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="Assests/images/biryani.jpg" class="offer1" alt="Biryani" >
+
+    </div>
+    <div class="carousel-item">
+      <img src="Assests/images/pizza.jpg" class="offer2" alt="Pizza"  >
+    </div>
+    <div class="carousel-item">
+      <img src="Assests/images/cakes (1).avif" class="offer3" alt="Cakes"  >
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on ph-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--searchbar-->
+            <div class="search">
+                <input type="text" id="mainSearchInput" placeholder="What You Want To Eat?">
+                <button class="search-btn">Search</button>
+            </div>
+            <!--profile icon on left side of navbar-->
+            
+        </div>
+    
+        <!--main highlight-->
+       <div class="main-highlight">
+    <!-- Title section and arrows -->
+    <div class="main-header">
+        <h2 class="main-title">Recommendations</h2>
+        <div class="main-arrow">
+            <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
+            <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
+        </div>
+    </div>
+
+    <!-- Highlight menu -->
+    <div class="highlight-wrapper">
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/tomato.webp" alt="Tomato Rice">
+            <div class="highlight-desc">
+                <h4>Tomato Rice</h4>
+                <p>$20</p>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/lemon.jpg" alt="Lemon Rice">
+            <div class="highlight-desc">
+                <h4>Lemon Rice</h4>
+                <p>$20</p>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/meals.jpg" alt="Meals">
+            <div class="highlight-desc">
+                <h4>Meals</h4>
+                <p>$25</p>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/tea.webp"alt="Tea">
+            <div class="highlight-desc">
+                <h4>Tea</h4>
+                <p>$5</p>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/juice.webp" alt="Juice">
+            <div class="highlight-desc">
+                <h4>Juice</h4>
+                <p>$10</p>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <img class="highlight-img" src="Assests/images/samosa.avif" alt="Samosa">
+            <div class="highlight-desc">
+                <h4>Samosa</h4>
+                <p>$12</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="main-menus">
+            <div class="main-filter">
+                <div>
+                    <h2 class="main-title">Menu Category</h2>
+                    <div class="main-arrow">
+                        <ion-icon class="back-menus" name="chevron-back-circle-outline"></ion-icon>
+                         <ion-icon class="next-menus" name="chevron-forward-circle-outline"></ion-icon>
+                    </div>
+                </div>
+            
+            
+
+            <div class="filter-wrapper">
+                <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="restaurant-outline"></ion-icon>
+                    </div>
+                    <p>All Menus</p>
+                </div>
+                <div class="filter-card">
+                     <div class="filter-icon">
+                        
+                    <ion-icon name="fast-food-outline"></ion-icon>
+                </div>
+
+                    <p>Burger</p>
+                </div>
+
+            <div class="filter-card">
+                    <div class="filter-icon">
+                        <a href="offer.html"><ion-icon name="pizza-outline"></ion-icon></a>
+                    </div>
+                    <p>Pizza</p>
+            </div>
+             <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="wine-outline"></ion-icon>
+                    </div>
+                    <p>Juice</p>
+            </div>
+             <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="ice-cream-outline"></ion-icon>
+                    </div>
+                    <p>Ice Cream</p>
+            </div>
+             <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="cafe-outline"></ion-icon>
+                    </div>
+                    <p>Coffee</p>
+            </div>
+             <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="fish-outline"></ion-icon>
+                    </div>
+                    <p>Fish</p>
+            </div>
+             <div class="filter-card">
+                    <div class="filter-icon">
+                        <ion-icon name="nutrition-outline"></ion-icon>
+                    </div>
+                    <p>Healthy</p>
+            </div>
+            
+            
+        </div>
+    </div>
+    <hr class="divider">
+    </div> <!-- End of main-menus -->
+
+    <!-- Top Restaurants Section -->
+    <div class="top-restaurants-section">
+        <div class="main-header">
+            <h2 class="main-title">Top Restaurants Near You</h2>
+        </div>
+        <div class="top-restaurants-grid">
+            <!-- Restaurant Card 1 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/gourmet.jpg" alt="The Gourmet Place">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">The Gourmet Place</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.8
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 123 Flavor Ave
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 2 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/th.jpg" alt="Urban Bites">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Urban Bites</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.5
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 456 Urban St
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 3 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/spice.jpg" alt="Spice Route">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Spice Route</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.7
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 789 Spice Rd
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 4 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/pasta para.png" alt="Pasta Paradise">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Pasta Paradise</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.3
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 101 Noodle Blvd
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 5 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/green.jpg" alt="Green Leaf Eatery">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Green Leaf Eatery</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.6
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 202 Veggie Ln
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 6 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/sushi.jpg" alt="Sushi Central">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Sushi Central</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.9
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 303 Fish Ct
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 7 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/burger.jpg" alt="Burger Hub">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Burger Hub</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.2
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 404 Patty Pl
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 8 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/taco-fiesta.jpg" alt="Taco Fiesta">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Taco Fiesta</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.4
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 505 Sombrero Wy
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 9 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/delight.jpg" alt="Desert Delights">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Desert Delights</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.7
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 606 Sweet Dr
+                    </p>
+                </div>
+            </div>
+            <!-- Restaurant Card 10 -->
+            <div class="restaurant-card">
+                <img class="restaurant-img" src="Assests/images/aroma-cafe.jpg" alt="Cafe Aroma">
+                <div class="restaurant-details">
+                    <h4 class="restaurant-name">Cafe Aroma</h4>
+                    <p class="restaurant-rating">
+                        <ion-icon name="star"></ion-icon> 4.5
+                    </p>
+                    <p class="restaurant-location">
+                        <ion-icon name="location-outline"></ion-icon> 707 Bean Ave
+                    </p>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+    <!-- End Top Restaurants Section -->
+
+</div> <!-- End of main -->
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="Assests/images/logo.jpg" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+   <script src="Assests/js/script.js" defer></script> <!-- Added custom JS -->
+</body>
+

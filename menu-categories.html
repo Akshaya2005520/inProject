@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Categories - FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* General page styling */
+        body {
+            /* background-color: var(--greycolor); /* Optional: if you want a specific background for the whole page */
+        }
+
+        .menu-categories-page-container {
+            padding: 20px;
+            /* background-color: var(--greycolor); /* Light background for the content area */
+        }
+
+        .categories-main-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 25px 20px;
+            background: linear-gradient(135deg, var(--color1), var(--color2));
+            color: var(--whitecolor);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .categories-main-header h1 {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .categories-main-header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 25px;
+            padding-bottom: 30px;
+        }
+
+        .category-card {
+            background-color: var(--whitecolor);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0; /* For animation */
+            transform: translateY(30px); /* For animation */
+            animation: fadeInSlideUp 0.5s ease-out forwards;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .category-card-image {
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            object-fit: cover; /* Cover the area, might crop */
+        }
+
+        .category-card-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1; /* Allows content to fill space if card heights vary */
+        }
+
+        .category-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color1);
+            margin-bottom: 10px;
+        }
+
+        .category-card-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Animation for cards appearing one by one */
+        @keyframes fadeInSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation delays using nth-child */
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        .category-card:nth-child(5) { animation-delay: 0.5s; }
+        .category-card:nth-child(6) { animation-delay: 0.6s; }
+        .category-card:nth-child(7) { animation-delay: 0.7s; }
+        .category-card:nth-child(8) { animation-delay: 0.8s; }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assests/images/LOGO.png" alt="Logo">
+        </div>
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="#"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="main-navbar">
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <div class="search">
+                <input type="text" placeholder="Search categories or dishes...">
+                <button class="search-btn">Search</button>
+            </div>
+        </div><br>
+
+        <div class="menu-categories-page-container">
+            <header class="categories-main-header">
+                <h1>Explore Our Menu Categories</h1>
+                <p>Discover a world of flavors. Click on a category to see delicious options!</p>
+            </header>
+
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-burger.jpg" alt="Burgers" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Burgers</h3>
+                        <p class="category-card-description">Juicy patties, fresh buns, and all your favorite toppings.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-pizza.jpg" alt="Pizza" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Pizza</h3>
+                        <p class="category-card-description">Classic and gourmet pizzas with a variety of crusts and toppings.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/juice.webp" alt="Juices" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Juices & Beverages</h3>
+                        <p class="category-card-description">Refreshing fresh juices, smoothies, and other beverages.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-icecream.jpg" alt="Ice Cream" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Ice Cream</h3>
+                        <p class="category-card-description">Cool down with our delightful range of ice creams and sorbets.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-coffee.jpg" alt="Coffee" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Coffee & Tea</h3>
+                        <p class="category-card-description">Aromatic coffees and soothing teas to kickstart or unwind your day.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-fish.jpg" alt="Fish & Seafood" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Fish & Seafood</h3>
+                        <p class="category-card-description">Freshly prepared fish and seafood dishes, grilled, fried, or steamed.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/category-healthy.jpg" alt="Healthy Options" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Healthy Choices</h3>
+                        <p class="category-card-description">Nutritious and delicious meals for a healthy lifestyle. Salads, bowls, and more.</p>
+                    </div>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="assests/images/cakes.avif" alt="Desserts" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3 class="category-card-title">Desserts</h3>
+                        <p class="category-card-description">Sweet treats to complete your meal. Cakes, pastries, and more.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/script.js" defer></script>
+</body>
+</html>

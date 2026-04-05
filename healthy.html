@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Varieties - FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Reusing styles from other detail pages as they are generic for cards */
+        .main-content-area {
+            flex-grow: 1;
+            padding: 20px;
+            background-color:  rgba(128, 181, 243, 0.651);/* Or your preferred background */
+        }
+        .detail-container {
+            max-width: 100%;
+            margin: 30px auto;
+            background-color: var(--greycolor);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .detail-container h1 {
+            color: var(--color1);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Grid Styles (reused) */
+        .item-grid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            grid-auto-columns: 280px;
+            gap: 25px;
+            margin-top: 20px;
+            padding-right: 15px;
+            width: max-content;
+        }
+
+        .item-card {
+            background-color: #c0cbf0; /* White background for cards */
+            border-radius: 8px;
+
+            border: 1px solid #6d5b5b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-card-content h3 {
+            font-size: 1.4rem;
+            color: var(--blackcolor);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .item-description-variety {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .item-rating {
+            display: flex;
+            align-items: center;
+            color: #f39c12;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .item-rating ion-icon {
+            margin-right: 4px;
+        }
+
+        .item-rating span {
+            color: #777;
+            margin-left: 5px;
+        }
+
+        .item-cost {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color1);
+            margin-bottom: 10px;
+        }
+        .btn-add-to-cart-list {
+            background-color: var(--color2);
+            color: var(--whitecolor);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+        .btn-add-to-cart-list:hover {
+            background-color: #e9a800;
+        }
+        .back-to-menu-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--color2);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-to-menu-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <!--sidebar-->
+        <div class="logo">
+            <img src="assests/images/LOGO.png" alt="Logo">
+        </div>
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="help.html"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="detail-container">
+            <!-- Main Navbar (copied from index.html for consistency) -->
+            <div class="main-navbar">
+                <!--menu when appear on ph-->
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <!--searchbar-->
+                <div class="search">
+                    <input type="text" id="mainSearchInput" placeholder="Search for healthy options...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div><br>
+            <h1>Explore Our Healthy Varieties</h1>
+
+                <div class="item-grid">
+                    <!-- Healthy 1: Quinoa Salad -->
+                    <div class="item-card">
+                        <img src="assests/images/Mediterranean-.jpg" alt="Quinoa Salad"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Mediterranean Quinoa Salad</h3>
+                            <p class="item-description-variety">
+                                Fresh quinoa with cucumber, tomatoes, olives, feta, and a lemon-herb dressing.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(280+)</span>
+                            </div>
+                            <div class="item-cost">$12.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 2: Grilled Chicken & Veggies -->
+                    <div class="item-card">
+                        <img src="assests/images/grilled-c.jpeg" alt="Grilled Chicken & Veggies"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Grilled Chicken & Steamed Veggies</h3>
+                            <p class="item-description-variety">
+                                Lean grilled chicken breast served with a colorful medley of steamed seasonal vegetables.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(310+)</span>
+                            </div>
+                            <div class="item-cost">$15.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 3: Avocado Toast -->
+                    <div class="item-card">
+                        <img src="assests/images/number0006_22925_Classic_Avocado_Toast_Amate.png" alt="Avocado Toast"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Classic Avocado Toast</h3>
+                            <p class="item-description-variety">
+                                Smashed avocado on whole-grain toast, topped with cherry tomatoes and a sprinkle of chili flakes.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(190+)</span>
+                            </div>
+                            <div class="item-cost">$8.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 4: Berry Smoothie Bowl -->
+                    <div class="item-card">
+                        <img src="assests/images/super-berry-smoothie-b.jpg" alt="Berry Smoothie Bowl"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Super Berry Smoothie Bowl</h3>
+                            <p class="item-description-variety">
+                                A thick blend of mixed berries, banana, and almond milk, topped with granola and fresh fruit.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.9 <span>(250+)</span>
+                            </div>
+                            <div class="item-cost">$10.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Healthy 5: Lentil Soup -->
+                    <div class="item-card">
+                        <img src="assests/images/gourmetwarehouse-hea.jpg" alt="Lentil Soup">
+                        <div class="item-card-content">
+                            <h3>Hearty Lentil Soup</h3>
+                            <p class="item-description-variety">
+                                A comforting and nutritious soup packed with lentils, vegetables, and aromatic spices.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(150+)</span>
+                            </div>
+                            <div class="item-cost">$7.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 6: Baked Salmon -->
+                    <div class="item-card">
+                        <img src="assests/images/Lemon-Pepper-Salmon-R.webp" alt="Baked Salmon">
+                        <div class="item-card-content">
+                            <h3>Lemon Herb Baked Salmon</h3>
+                            <p class="item-description-variety">
+                                Flaky baked salmon seasoned with lemon and fresh herbs, rich in Omega-3s.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(220+)</span>
+                            </div>
+                            <div class="item-cost">$18.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 7: Greek Yogurt Parfait -->
+                    <div class="item-card">
+                        <img src="assests/images/Greek-Yogurt-Parfait-Re.jpg" alt="Greek Yogurt Parfait"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Greek Yogurt Parfait</h3>
+                            <p class="item-description-variety">
+                                Layers of Greek yogurt, fresh berries, and crunchy granola. A perfect breakfast or snack.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(180+)</span>
+                            </div>
+                            <div class="item-cost">$6.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 8: Chicken Lettuce Wraps -->
+                    <div class="item-card">
+                        <img src="assests/images/asian-chicken-lettuce-wraps-2-1.jpg" alt="Chicken Lettuce Wraps"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Chicken Lettuce Wraps</h3>
+                            <p class="item-description-variety">
+                                Savory minced chicken and vegetables served in crisp lettuce cups. Light and flavorful.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(200+)</span>
+                            </div>
+                            <div class="item-cost">$13.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 9: Buddha Bowl -->
+                    <div class="item-card">
+                        <img src="assests/images/vibrant-buddha-bowl-.jpg" alt="Buddha Bowl"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Vibrant Buddha Bowl</h3>
+                            <p class="item-description-variety">
+                                A colorful bowl of roasted sweet potatoes, chickpeas, avocado, and quinoa with a tahini dressing.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.9 <span>(230+)</span>
+                            </div>
+                            <div class="item-cost">$14.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 10: Stuffed Bell Peppers -->
+                    <div class="item-card">
+                        <img src="assests/images/qui.jpg" alt="Stuffed Bell Peppers"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Quinoa Stuffed Bell Peppers</h3>
+                            <p class="item-description-variety">
+                                Colorful bell peppers filled with a savory mix of quinoa, black beans, corn, and spices.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(160+)</span>
+                            </div>
+                            <div class="item-cost">$13.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 11: Shrimp and Avocado Salad -->
+                    <div class="item-card">
+                        <img src="assests/images/lime-shrimp-avocado-salad.webp" alt="Shrimp and Avocado Salad"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Shrimp and Avocado Salad</h3>
+                            <p class="item-description-variety">
+                                Grilled shrimp, creamy avocado, cherry tomatoes, and red onion on a bed of mixed greens.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(190+)</span>
+                            </div>
+                            <div class="item-cost">$16.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 12: Tofu Scramble -->
+                    <div class="item-card">
+                        <img src="assests/images/vegan-tofu-scramble-breakfast-recipe-.jpg" alt="Tofu Scramble"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Vegan Tofu Scramble</h3>
+                            <p class="item-description-variety">
+                                A hearty and protein-packed breakfast scramble with tofu, turmeric, and fresh vegetables.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(140+)</span>
+                            </div>
+                            <div class="item-cost">$9.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 13: Oatmeal with Berries -->
+                    <div class="item-card">
+                        <img src="assests/images/vv.webp" alt="Oatmeal with Berries"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Warm Oatmeal with Berries</h3>
+                            <p class="item-description-variety">
+                                Hearty rolled oats cooked to perfection, topped with fresh mixed berries and a drizzle of honey.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(120+)</span>
+                            </div>
+                            <div class="item-cost">$6.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 14: Black Bean Burger -->
+                    <div class="item-card">
+                        <img src="assests/images/blackbeanburger.webp" alt="Black Bean Burger"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Spicy Black Bean Burger</h3>
+                            <p class="item-description-variety">
+                                A homemade spicy black bean patty on a whole wheat bun with lettuce, tomato, and avocado.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(150+)</span>
+                            </div>
+                            <div class="item-cost">$11.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Healthy 15: Cauliflower Rice Stir-fry -->
+                    <div class="item-card">
+                        <img src="assests/images/Cauliflower-Rice-Stir-Fry-feat.jpg" alt="Cauliflower Rice Stir-fry"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Cauliflower Rice Stir-fry</h3>
+                            <p class="item-description-variety">
+                                A low-carb stir-fry with cauliflower rice, mixed vegetables, tofu, and a light soy-ginger sauce.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(110+)</span>
+                            </div>
+                            <div class="item-cost">$12.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <a href="index.html#main-menus-section" class="back-to-menu-link"> <ion-icon name="arrow-back-outline"></ion-icon> Back to Menu</a>
+        </div>
+
+    <!-- Footer (copy from index.html or other pages if you have a standard one) -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart-list');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Find the parent card to get item details
+                    const card = event.target.closest('.item-card');
+                    
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPriceText = card.querySelector('.item-cost').textContent;
+                    const itemImage = card.querySelector('img').src;
+
+                    const cartItem = {
+                        name: itemName,
+                        price: parseFloat(itemPriceText.replace('$', '')),
+                        image: itemImage,
+                        quantity: 1
+                    };
+
+                    // Get existing cart from localStorage or initialize an empty array
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Check if item already exists in cart to avoid duplicates
+                    const existingItem = cart.find(item => item.name === cartItem.name);
+
+                    if (existingItem) {
+                        alert(`${itemName} is already in your cart!`);
+                    } else {
+                        cart.push(cartItem);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        alert(`Added ${itemName} to your cart!`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html><healthy class="html"></healthy>

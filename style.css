@@ -1,0 +1,1113 @@
+import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Miniver&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root{
+    --color1:#0e6237;
+    --color2:#ffc107;
+    --whitecolor:#fff;
+    --blackcolor:#000;
+    --softbluecolor:#d9f2ee;
+    --darkgreycolor:#a7a7a7;
+    --greycolor:#f5f5f5;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    font-family:"Open Sans",sans-serif;
+}
+.sidebar{
+    
+display: flex;
+align-items: center;
+padding:10px;
+background-color:var(--color1);
+color:var(--whitecolor);
+}
+
+.sidebar .logo img{
+   max-height: 110px;
+}
+.sidebar h1{
+    color:rgb(2,15,21);
+    text-align:top-right;
+    margin-left:10px;
+    cursor:pointer;
+}
+.sidebar-menus{
+    padding-left: 40px;
+
+}
+.sidebar-menus a{
+    padding:10px;
+    margin:0.5rem 0;
+    font-size: 20px;    
+    font-weight: 600;
+text-decoration: none;
+    color:var(--whitecolor);
+}
+.sidebar-menus a ion-icon{
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.sidebar-menus a:hover, .sidebar-logout a:hover{
+    background-color: var(--color2);
+    border-radius: 50px;
+}
+
+.sidebar > .profile { /* Targeting .profile directly inside .sidebar */
+    margin-left: auto; /* Pushes the profile icons to the far right of the sidebar */
+    /* Other styles like display:flex, align-items:center for the icons themselves are inherited from general .profile rules */
+}
+.profile{
+    display:flex;
+    align-items:end;
+    gap:0.5rem;
+    left: 100%;
+}
+.cart, .user{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: var(--whitecolor);
+    font-size: 20px;
+    color:var(--color1);
+    text-decoration: none;
+    padding:0 10px;
+    height:40px;
+    border-radius: 50%;
+}
+.cart:hover, .user:hover{
+    box-shadow: rgba(149, 157, 165, 0.2)0px 8px 24px;
+}
+.video video{
+    width:1345px;
+    height: 400px;
+    padding: 0px;
+    margin:2px ;
+    object-fit: cover;
+}
+
+.content{
+    display:grid;
+    grid-template-columns:60% 40%;
+ 
+    align-items: center;
+    justify-content: space-between;
+   background:rgba(0, 0, 0, 0.938); 
+    background-size: cover;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.content .content-left{
+    display: block;
+    width: 100%;
+}
+.content .content-left .info{
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.content .content-left .info .img img{
+    height: 500px;
+    border: 3px solid red;
+}
+.content .content-left .info h2{
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+    color: #d9f2ee;
+}
+ 
+.content  .content-left .info p{
+    font-size: 20px;
+    line-height: 2pc;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    color: #ddd;
+}
+.content .content-left button{
+    
+    
+
+--glow-color: rgb(233, 218, 218);
+
+--glow-spread-color: rgba(160, 255, 123, 0.781);
+
+--enhanced-glow-color: rgb(220, 255, 206);
+
+--btn-color: rgb(85, 136, 61);
+
+border: 0.25em solid var(--glow-color);
+
+padding: 1em 3em;
+
+color: var(--glow-color);
+
+font-size: 15px;
+
+font-weight: bold;
+
+background-color: var(--btn-color);
+
+border-radius: 1em;
+
+outline: none;
+
+box-shadow: 0 0 1em 0.25em var(--glow-color),
+
+0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+
+text-shadow: 0 0 0.5em var(--glow-color);
+
+position: relative;
+
+transition: all 0.3s;
+
+}
+.content .content-left button::after{
+pointer-events: none;
+content:"";
+position: absolute;
+top: 120%;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: var(-glow-spread-color);
+filter: blur(2cm);
+opacity: 0.7;
+transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+.content .content-left button:hover {
+color: var(--btn-color);
+background-color: var(glow-color);
+box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(-glow-color);
+}
+.content .content-left button:active
+ {
+
+box-shadow: 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+
+
+}
+.content .content-right{
+    
+   
+   position: relative;
+  left: -150px;
+    
+}
+.content .content-right img{
+    
+   
+    width: 400px;
+    height: 400px;
+    position: relative;
+    user-select: none;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg); /* Changed to 360deg for a full rotation */
+    }
+}
+
+.carousel-inner{
+    background-color: var(--greycolor);
+}
+.carousel-item img{
+    width: 100%;
+    height: 500px;
+    padding: 5px;
+}
+.carouselExampleIndicators{
+    max-width: 1500px;
+    height: 800px;
+   
+    margin: 0 auto;
+    overflow:hidden;
+    border-radius: 10px;
+} 
+.carouselExampleIndicators .carousel-item img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;  
+}
+.main{
+    width: 100%;
+   height: max-content;
+   padding: 2%;
+   background-color: var(--softbluecolor);
+}
+.main-navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+     gap: 1rem;
+}
+.menu-toggle{
+    display: none;
+}
+.search{
+    width: 60%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--whitecolor);
+    border-radius: 20px;
+    font-family: "Miniver", cursive;
+}
+.search input{
+    width:80%;
+    height: 100%;
+    padding:20px;
+    border:none;
+    border-radius:20px;
+}
+.search-btn{
+    background-color: var(--color2);
+    color: var(--whitecolor);
+    border:none;
+    border-radius: 20px;
+    width:120px;
+    cursor:pointer;
+}
+.search:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+
+.search-btn:hover{
+    background-color: var(--color1);
+}
+
+.main-highlight{
+    margin:3% 0;
+    padding:2%;
+    background-color: var(--color2);
+    border-radius: 8px;
+    
+}
+.main-header
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-title{
+    font-size: 20px;
+}
+.main-arrow{
+    font-size: 24px;
+}
+.back, .next{
+    cursor: pointer;
+
+}
+.back:hover, .next:hover{
+    color:var(--color1);
+}
+.highlight-wrapper{
+    width: 100%;
+    display: flex;
+    padding: 1%;
+    border-radius: 8px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.highlight-card{
+    display:flex ;
+    flex-direction: row;
+    min-width: 200px;
+    width: 80%;
+    height: 100%;
+    gap: 1rem;
+    border-radius: 8px;
+    padding: 1%;
+    background-color: var(--greycolor);
+    cursor: pointer;
+}
+.highlight-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: centers; 
+
+}
+.highlight-desc h4{
+    color: var(--color1);
+
+}
+.highlight-desc p{
+    color: var(--blackcolor);
+    font-size: 13px;
+
+}
+.highlight-card:hover{
+    background-color: var(--whitecolor);
+    box-shadow: rgba(176, 176, 176, 0.2)0px 2px 8px 0px;
+}
+.main-menus{
+    min-height: 100%;
+    background-color: var(--greycolor);
+    padding: 2%;
+    border-radius: 8px;
+}
+.main-filter{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+.back-menus, .next-menus {
+    cursor: pointer;
+}
+.back-menus:hover, .next-menus:hover{
+    color:var(--color1);
+}
+.filter-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100px;
+    gap: 1.2rem;
+}
+.filter-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 80px;
+    height: 100%;
+    background-color: var(--whitecolor);
+    color: var(--blackcolor);
+    border-radius: 8px;
+    border:1px solid var(--softgreencolor);
+    font-size: 14px;
+    cursor:pointer;
+     
+}
+.filter-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    font-size: 30px;
+    background-color: var(--softgreencolor);
+    color: var(--color1);
+    border-radius: 8px;
+}
+.filter-card:hover{
+    background-color: var(--color1);
+    color: var(--whitecolor);
+}
+.filter-icon{
+    background-color: var(--whitecolor);
+
+}
+
+.divider{
+    margin: 1rem 0;
+    height: 4px;
+    width: 100%;
+   background-color: var(--color1);
+    border: none;
+}
+
+/* Top Restaurants Section Styling */
+.top-restaurants-section {
+    padding: 20px 0; /* Vertical padding for the section */
+    
+    padding-bottom: 20px; 
+    overflow-x: hidden; /* Explicitly hide horizontal overflow */
+}
+
+.top-restaurants-section .main-header {
+    margin-bottom: 20px; /* Space below the section title */
+    /* Ensure the header is not part of the scrollable content if it were inside the grid parent */
+    /* In this case, it's a sibling to the grid's direct parent for scrolling, which is fine. */
+}
+
+.top-restaurants-grid {
+    display: grid;
+    /* Creates 3 equal-width columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allows cards to wrap and adjust */
+    /* Defines 5 rows. 'auto' means row height will fit its content.
+       With your current 10 restaurant items, the first 3 rows will be filled,
+       the 4th row will have one item, and the 5th defined row track will be empty.
+       If you add more items (up to 15), they will fill these defined rows.
+       If you have more than 15 items, additional rows will be created implicitly. */
+    /* grid-template-rows:repeat(3, 1fr); */ /* Removed to allow rows to be created automatically */
+    /* Defines the gap between the grid items (cards), providing equal spacing.
+       Adjust '20px' to your preferred spacing (e.g., 1rem, 15px). */
+    gap: 20px;
+    /* Optional: Adds some padding above and below the grid container. */
+    padding: 20px 0;
+}
+
+/* Optional but recommended: Basic styling for restaurant cards for better presentation */
+.restaurant-card {
+    width: 100%; /* Ensures the card takes the full width of its grid cell */
+    display: flex; /* Using flexbox for the internal layout of the card */
+    flex-direction: column; /* Stacks the image and details vertically */
+    border: 1px solid #ddd; /* Adds a light border around the card */
+    border-radius: 8px; /* Rounds the corners of the card */
+    overflow: hidden; /* Ensures content (like images) respects the rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    background-color: #fff; /* Ensures cards have a background, e.g., if page bg is different */
+}
+
+.restaurant-img {
+    width: 100%; /* Image takes the full width of the card */
+    height: 180px; /* Fixed height for images; adjust as needed.
+                      Consider using aspect-ratio CSS property for responsive heights. */
+    object-fit: cover; /* Ensures the image covers the allocated space, cropping if necessary,
+                          without distorting the aspect ratio. */
+}
+
+.restaurant-details {
+    padding: 15px; /* Adds spacing inside the card for the text content */
+    flex-grow: 1;  /* Allows this section to grow if cards have varying content heights,
+                      helping align content if cards were in a flex row (less critical for grid here). */
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-name {
+    font-size: 1.1rem; /* Slightly larger font for the name */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.restaurant-rating,
+.restaurant-location {
+    font-size: 0.9rem; /* Standard font size for details */
+    color: #555; /* Dark grey color for text */
+    margin-bottom: 5px; /* Space below each detail line */
+    display: flex; /* Aligns icon and text on the same line */
+    align-items: center; /* Vertically centers icon with text */
+}
+
+.restaurant-rating ion-icon,
+.restaurant-location ion-icon {
+    margin-right: 6px; /* Space between the icon and the text */
+    color: #e97500; /* An accent color for the icons, adjust as you like */
+    font-size: 1.1em; /* Slightly larger icon */
+}
+
+/* Ensure the last detail item in a card doesn't have extra bottom margin if not needed */
+.restaurant-details > *:last-child {
+    margin-bottom: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Miniver&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+:root{
+    --color1:#0e6237;
+    --color2:#ffc107;
+    --whitecolor:#fff;
+    --blackcolor:#000;
+    --softbluecolor:#d9f2ee;
+    --darkgreycolor:#a7a7a7;
+    --greycolor:#f5f5f5;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    font-family:"Open Sans",sans-serif;
+}
+
+.sidebar{
+    
+display: flex;
+align-items: center;
+padding:10px;
+background-color:var(--color1);
+color:var(--whitecolor);/* Add this to your assests/css/style.css */
+}
+
+/* Optional: Push main content when sidebar is active */
+/*
+.main {
+    transition: margin-left 0.3s ease-in-out;
+}
+body.sidebar-active .main {
+    margin-left: 280px; /* Adjust to your sidebar width */
+/* } */
+
+
+
+.sidebar .logo img{
+   max-height: 110px;
+}
+.sidebar h1{
+    color:rgb(2,15,21);
+    text-align:top-right;
+    margin-left:10px;
+    cursor:pointer;
+}
+.sidebar-menus{
+    padding-left: 40px;
+
+}
+.sidebar-menus a{
+    padding:10px;
+    margin:0.5rem 0;
+    font-size: 20px;    
+    font-weight: 600;
+text-decoration: none;
+    color:var(--whitecolor);
+}
+.sidebar-menus a ion-icon{
+    font-size: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.sidebar-menus a:hover, .sidebar-logout a:hover{
+    background-color: var(--color2);
+    border-radius: 50px;
+}
+.video video{
+    width:1345px;
+    height: 400px;
+    padding: 0px;
+    margin:2px ;
+    object-fit: cover;
+}
+
+.content{
+    display:grid;
+    grid-template-columns:60% 40%;
+  
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    width: 100%;
+    object-fit: cover;
+    
+}
+.content .content-left{
+    display: block;
+    width: 100%;
+}
+.content .content-left .info{
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.content .content-left .info .img img{
+    height: 500px;
+    border: 3px solid red;
+}
+.content .content-left .info h2{
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+    color: #d9f2ee;
+}
+ 
+.content  .content-left .info p{
+    font-size: 20px;
+    line-height: 2pc;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    color: #ddd;
+}
+.content .content-left button{
+    
+    
+
+--glow-color: rgb(233, 218, 218);
+
+--glow-spread-color: rgba(160, 255, 123, 0.781);
+
+--enhanced-glow-color: rgb(220, 255, 206);
+
+--btn-color: rgb(85, 136, 61);
+
+border: 0.25em solid var(--glow-color);
+
+padding: 1em 3em;
+
+color: var(--glow-color);
+
+font-size: 15px;
+
+font-weight: bold;
+
+background-color: var(--btn-color);
+
+border-radius: 1em;
+
+outline: none;
+
+box-shadow: 0 0 1em 0.25em var(--glow-color),
+
+0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+
+text-shadow: 0 0 0.5em var(--glow-color);
+
+position: relative;
+
+transition: all 0.3s;
+
+}
+.content .content-left button::after{
+pointer-events: none;
+content:"";
+position: absolute;
+top: 120%;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: var(-glow-spread-color);
+filter: blur(2cm);
+opacity: 0.7;
+transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+.content .content-left button:hover {
+color: var(--btn-color);
+background-color: var(glow-color);
+box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(-glow-color);
+}
+.content .content-left button:active
+ {
+
+box-shadow: 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+
+
+}
+.content .content-right{
+    
+   
+   position: relative;
+  left: -150px;
+    
+}
+.content .content-right img{
+    
+    
+    width: 400px;
+    height: 400px;
+    position: relative;
+    user-select: none;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg); /* Changed to 360deg for a full rotation */
+    }
+}
+
+.carousel-inner{
+    background-color: var(--greycolor);
+}
+.carousel-item img{
+    width: 100%;
+    height: 500px;
+    padding: 5px;
+}
+.carouselExampleIndicators{
+    max-width: 1500px;
+    height: 800px;
+   
+    margin: 0 auto;
+    overflow:hidden;
+    border-radius: 10px;
+} 
+.carouselExampleIndicators .carousel-item img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;  
+}
+.main{
+    width: 100%;
+   height: max-content;
+   padding: 2%;
+   background-color: var(--softbluecolor);
+}
+.main-navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+     gap: 1rem;
+}
+.menu-toggle{
+    display: none;
+}
+.search{
+    width: 60%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--whitecolor);
+    border-radius: 20px;
+    font-family: "Miniver", cursive;
+}
+.search input{
+    width:80%;
+    height: 100%;
+    padding:20px;
+    border:none;
+    border-radius:20px;
+}
+.search-btn{
+    background-color: var(--color2);
+    color: var(--whitecolor);
+    border:none;
+    border-radius: 20px;
+    width:120px;
+    cursor:pointer;
+}
+.search:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; 
+}
+
+.search-btn:hover{
+    background-color: var(--color1);
+}
+.profile{
+    display:flex;
+    align-items: center;
+    gap:0.5rem;
+
+}
+.cart, .user{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: var(--whitecolor);
+    font-size: 20px;
+    color:var(--color1);
+    text-decoration: none;
+    padding:0 10px;
+    height:40px;
+    border-radius: 50%;
+}
+.cart:hover, .user:hover{
+    box-shadow: rgba(149, 157, 165, 0.2)0px 8px 24px;
+}
+.main-highlight{
+    margin:3% 0;
+    padding:2%;
+    background-color: var(--color2);
+    border-radius: 8px;
+    
+}
+.main-header
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-title{
+    font-size: 20px;
+}
+.main-arrow{
+    font-size: 24px;
+}
+.back, .next{
+    cursor: pointer;
+
+}
+.back:hover, .next:hover{
+    color:var(--color1);
+}
+.highlight-wrapper{
+    width: 100%;
+    display: flex;
+    padding: 1%;
+    border-radius: 8px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.highlight-card{
+    display:flex ;
+    flex-direction: row;
+    min-width: 200px;
+    width: 80%;
+    height: 100%;
+    gap: 1rem;
+    border-radius: 8px;
+    padding: 1%;
+    background-color: var(--greycolor);
+    cursor: pointer;
+}
+.highlight-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: centers; 
+
+}
+.highlight-desc h4{
+    color: var(--color1);
+
+}
+.highlight-desc p{
+    color: var(--blackcolor);
+    font-size: 13px;
+
+}
+.highlight-card:hover{
+    background-color: var(--whitecolor);
+    box-shadow: rgba(176, 176, 176, 0.2)0px 2px 8px 0px;
+}
+.main-menus{
+    min-height: 100%;
+    background-color: var(--greycolor);
+    padding: 2%;
+    border-radius: 8px;
+}
+.main-filter{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+.back-menus, .next-menus {
+    cursor: pointer;
+}
+.back-menus:hover, .next-menus:hover{
+    color:var(--color1);
+}
+.filter-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100px;
+    gap: 1.2rem;
+}
+.filter-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 80px;
+    height: 100%;
+    background-color: var(--color1);
+    color: var(--blackcolor);
+    border-radius: 8px;
+    border:1px solid var(--softgreencolor);
+    font-size: 14px;
+    cursor:pointer;
+     
+}
+.filter-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    font-size: 30px;
+    background-color: var(--softgreencolor);
+    color: var(--color1);
+    border-radius: 8px;
+}
+.filter-card:hover{
+    background-color: var(--color2);
+    color: var(--whitecolor);
+}
+.filter-icon{
+    background-color: rgba(160, 255, 123, 0.781);
+
+}
+
+.divider{
+    margin: 1rem 0;
+    height: 4px;
+    width: 100%;
+   background-color: var(--color1);
+    border: none;
+}
+
+/* Top Restaurants Section Styling */
+.top-restaurants-section {
+    padding: 20px 0; /* Vertical padding for the section */
+    
+    padding-bottom: 20px; 
+    overflow-x: hidden; /* Explicitly hide horizontal overflow */
+}
+
+.top-restaurants-section .main-header {
+    margin-bottom: 20px; /* Space below the section title */
+    /* Ensure the header is not part of the scrollable content if it were inside the grid parent */
+    /* In this case, it's a sibling to the grid's direct parent for scrolling, which is fine. */
+}
+
+.top-restaurants-grid {
+    display: grid;
+    /* Creates 3 equal-width columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allows cards to wrap and adjust */
+    /* Defines 5 rows. 'auto' means row height will fit its content.
+       With your current 10 restaurant items, the first 3 rows will be filled,
+       the 4th row will have one item, and the 5th defined row track will be empty.
+       If you add more items (up to 15), they will fill these defined rows.
+       If you have more than 15 items, additional rows will be created implicitly. */
+    /* grid-template-rows:repeat(3, 1fr); */ /* Removed to allow rows to be created automatically */
+    /* Defines the gap between the grid items (cards), providing equal spacing.
+       Adjust '20px' to your preferred spacing (e.g., 1rem, 15px). */
+    gap: 20px;
+    /* Optional: Adds some padding above and below the grid container. */
+    padding: 20px 0;
+}
+
+/* Optional but recommended: Basic styling for restaurant cards for better presentation */
+.restaurant-card {
+    width: 100%; /* Ensures the card takes the full width of its grid cell */
+    display: flex; /* Using flexbox for the internal layout of the card */
+    flex-direction: column; /* Stacks the image and details vertically */
+    border: 1px solid #ddd; /* Adds a light border around the card */
+    border-radius: 8px; /* Rounds the corners of the card */
+    overflow: hidden; /* Ensures content (like images) respects the rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    background-color: #fff; /* Ensures cards have a background, e.g., if page bg is different */
+}
+
+.restaurant-img {
+    width: 100%; /* Image takes the full width of the card */
+    height: 180px; /* Fixed height for images; adjust as needed.
+                      Consider using aspect-ratio CSS property for responsive heights. */
+    object-fit: cover; /* Ensures the image covers the allocated space, cropping if necessary,
+                          without distorting the aspect ratio. */
+}
+
+.restaurant-details {
+    padding: 15px; /* Adds spacing inside the card for the text content */
+    flex-grow: 1;  /* Allows this section to grow if cards have varying content heights,
+                      helping align content if cards were in a flex row (less critical for grid here). */
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-name {
+    font-size: 1.1rem; /* Slightly larger font for the name */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.restaurant-rating,
+.restaurant-location {
+    font-size: 0.9rem; /* Standard font size for details */
+    color: #555; /* Dark grey color for text */
+    margin-bottom: 5px; /* Space below each detail line */
+    display: flex; /* Aligns icon and text on the same line */
+    align-items: center; /* Vertically centers icon with text */
+}
+
+.restaurant-rating ion-icon,
+.restaurant-location ion-icon {
+    margin-right: 6px; /* Space between the icon and the text */
+    color: #e97500; /* An accent color for the icons, adjust as you like */
+    font-size: 1.1em; /* Slightly larger icon */
+}
+
+/* Ensure the last detail item in a card doesn't have extra bottom margin if not needed */
+.restaurant-details > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer Section Styling */
+.footer-section {
+    background-color: var(--color1); /* Using your primary green color */
+    color: var(--whitecolor);
+    padding: 40px 20px 20px; /* Top, Left/Right, Bottom padding */
+    font-family: "Open Sans", sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: space-around; /* Distributes space around items */
+    align-items: flex-start; /* Aligns items to the top */
+    max-width: 1200px; /* Max width for content, centered */
+    margin: 0 auto 30px; /* Auto margins for centering, space at bottom */
+    gap: 20px; /* Space between flex items */
+}
+
+.footer-logo-area,
+.footer-links,
+.footer-social {
+    flex: 1; /* Allows flex items to grow and shrink */
+    min-width: 250px; /* Minimum width before wrapping */
+    margin-bottom: 20px; /* Space below each section on small screens */
+}
+
+.footer-logo {
+    max-height: 80px; /* Adjust as needed */
+    margin-bottom: 10px;
+}
+
+.footer-logo-area p {
+    font-size: 0.9rem;
+    color: var(--softbluecolor); /* Lighter text for description */
+}
+
+.footer-links h4,
+.footer-social h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--color2); /* Using your accent yellow color for headings */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li a {
+    color: var(--whitecolor);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--color2); /* Accent color on hover */
+}
+
+.footer-social a {
+    color: var(--whitecolor);
+    font-size: 24px; /* Icon size */
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--color2); /* Accent color on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--softbluecolor); /* Subtle separator line */
+    font-size: 0.85rem;
+    color: var(--greycolor);
+}

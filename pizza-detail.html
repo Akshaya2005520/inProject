@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Varieties - FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Reusing styles from burger-detail.html as they are generic for cards */
+        .main-content-area {
+            flex-grow: 1;
+            padding: 20px;
+            background-color:  rgba(128, 181, 243, 0.651);/* Or your preferred background */
+        }
+        .detail-container { /* Changed class name slightly for generality */
+            max-width: 100%;
+            margin: 30px auto;
+            background-color: var(--greycolor);
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .detail-container h1 {
+            color: var(--color1);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Grid Styles (reused) */
+        .item-grid { /* Changed class name slightly for generality */
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            grid-auto-columns: 280px;
+            gap: 25px;
+            margin-top: 20px;
+            padding-right: 15px;
+            width: max-content;
+        }
+
+        .item-card { /* Changed class name slightly for generality */
+            background-color: #c0cbf0; /* White background for cards */
+            border-radius: 8px;
+             border: 1px solid #6d5b5b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-card-content h3 {
+            font-size: 1.4rem;
+            color: var(--blackcolor);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .item-description-variety { /* Reused style name */
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .item-rating { /* Changed class name slightly for generality */
+            display: flex;
+            align-items: center;
+            color: #f39c12;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .item-rating ion-icon {
+            margin-right: 4px;
+        }
+
+        .item-rating span {
+            color: #777;
+            margin-left: 5px;
+        }
+
+        .item-cost { /* Changed class name slightly for generality */
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color1);
+            margin-bottom: 10px;
+        }
+        .btn-add-to-cart-list { /* Reused style name */
+            background-color: var(--color2);
+            color: var(--whitecolor);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+        .btn-add-to-cart-list:hover {
+            background-color: #e9a800;
+        }
+        .back-to-menu-link { /* Reused style name */
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--color2);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-to-menu-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <!--sidebar-->
+        <div class="logo">
+            <img src="assests/images/LOGO.png" alt="Logo">
+        </div>
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="help.html"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="detail-container">
+            <!-- Main Navbar (copied from index.html for consistency) -->
+            <div class="main-navbar">
+                <!--menu when appear on ph-->
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <!--searchbar-->
+                <div class="search">
+                    <input type="text" id="mainSearchInput" placeholder="Search for pizzas...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div><br>
+            <h1>Explore Our Pizza Varieties</h1>
+
+                <div class="item-grid">
+                    <!-- Pizza 1: Margherita -->
+                    <div class="item-card">
+                        <img src="assests/images/marg.png" alt="Margherita Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Classic Margherita</h3>
+                            <p class="item-description-variety">
+                                A timeless favorite with fresh mozzarella, basil, and tomato sauce on our signature crust.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(300+)</span>
+                            </div>
+                            <div class="item-cost">$15.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 2: Pepperoni -->
+                    <div class="item-card">
+                        <img src="assests/images/Pepperoni_1.jpg" alt="Pepperoni Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Pepperoni Passion</h3>
+                            <p class="item-description-variety">
+                                Loaded with savory pepperoni slices and extra cheese for that classic taste.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(280+)</span>
+                            </div>
+                            <div class="item-cost">$17.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 3: Veggie Supreme -->
+                    <div class="item-card">
+                        <img src="assests/images/air-fryer-pizza-1.jpg" alt="Veggie Supreme Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Veggie Supreme</h3>
+                            <p class="item-description-variety">
+                                A garden fresh delight with bell peppers, onions, mushrooms, olives, and tomatoes.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(190+)</span>
+                            </div>
+                            <div class="item-cost">$16.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 4: Meat Lovers -->
+                    <div class="item-card">
+                        <img src="assests/images/meat-lovers.jpg" alt="Meat Lovers Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Meat Lovers Feast</h3>
+                            <p class="item-description-variety">
+                                Packed with pepperoni, sausage, ham, and bacon for the ultimate meat experience.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.9 <span>(250+)</span>
+                            </div>
+                            <div class="item-cost">$19.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 5: Hawaiian -->
+                    <div class="item-card">
+                        <img src="assests/images/hawaiana.jpg" alt="Hawaiian Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Tropical Hawaiian</h3>
+                            <p class="item-description-variety">
+                                A sweet and savory mix of ham and pineapple on a cheesy base.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.2 <span>(150+)</span>
+                            </div>
+                            <div class="item-cost">$16.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 6: BBQ Chicken -->
+                    <div class="item-card">
+                        <img src="assests/images/BBQ-Chicken-Pizza-V2.jpg" alt="BBQ Chicken Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>BBQ Chicken Delight</h3>
+                            <p class="item-description-variety">
+                                Tender grilled chicken, red onions, and tangy BBQ sauce.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(210+)</span>
+                            </div>
+                            <div class="item-cost">$18.75</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 7: Mushroom Truffle -->
+                    <div class="item-card">
+                        <img src="assests/images/mushroom pizza.jpg" alt="Mushroom Truffle Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Mushroom Truffle</h3>
+                            <p class="item-description-variety">
+                                Exotic mushrooms, mozzarella, and a drizzle of luxurious truffle oil.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(120+)</span>
+                            </div>
+                            <div class="item-cost">$21.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 8: White Pizza -->
+                    <div class="item-card">
+                        <img src="assests/images/White-Garlic-Chicken-Veggie-Pizza-1.jpg" alt="White Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Garlic White Pizza</h3>
+                            <p class="item-description-variety">
+                                No tomato sauce! Ricotta, mozzarella, garlic, and a hint of olive oil.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.4 <span>(100+)</span>
+                            </div>
+                            <div class="item-cost">$15.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 9: Spinach Artichoke -->
+                    <div class="item-card">
+                        <img src="assests/images/spinach.jpg" alt="Spinach Artichoke Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Spinach Artichoke</h3>
+                            <p class="item-description-variety">
+                                Creamy spinach and artichoke dip base with mozzarella and parmesan.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.3 <span>(95+)</span>
+                            </div>
+                            <div class="item-cost">$17.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 10: Buffalo Chicken -->
+                    <div class="item-card">
+                        <img src="assests/images/Buffalo-Chicken-Pizza.jpg" alt="Buffalo Chicken Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Spicy Buffalo Chicken</h3>
+                            <p class="item-description-variety">
+                                Zesty buffalo sauce, grilled chicken, red onions, and a drizzle of ranch.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(180+)</span>
+                            </div>
+                            <div class="item-cost">$18.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 11: Supreme -->
+                    <div class="item-card">
+                        <img src="assests/images/feast.jpg" alt="Supreme Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Supreme Feast</h3>
+                            <p class="item-description-variety">
+                                The ultimate loaded pizza with pepperoni, sausage, peppers, onions, mushrooms, and olives.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(220+)</span>
+                            </div>
+                            <div class="item-cost">$19.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 12: Pesto Chicken -->
+                    <div class="item-card">
+                        <img src="assests/images/Chicken-Pesto-PizzaIMG_6172-720x1080.jpg" alt="Pesto Chicken Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Pesto Chicken Delight</h3>
+                            <p class="item-description-variety">
+                                Creamy pesto base, grilled chicken, sun-dried tomatoes, and mozzarella.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(115+)</span>
+                            </div>
+                            <div class="item-cost">$18.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 13: Mediterranean Veggie -->
+                    <div class="item-card">
+                        <img src="assests/images/Mediterranean.webp" alt="Mediterranean Veggie Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Mediterranean Veggie</h3>
+                            <p class="item-description-variety">
+                                Spinach, feta, olives, red onions, and sun-dried tomatoes on a light garlic base.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.4 <span>(90+)</span>
+                            </div>
+                            <div class="item-cost">$17.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 14: Spicy Sausage -->
+                    <div class="item-card">
+                        <img src="assests/images/sausage.jpg" alt="Spicy Sausage Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Spicy Italian Sausage</h3>
+                            <p class="item-description-variety">
+                                Crumbled spicy Italian sausage, bell peppers, onions, and mozzarella.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(140+)</span>
+                            </div>
+                            <div class="item-cost">$18.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Pizza 15: Philly Cheesesteak -->
+                    <div class="item-card">
+                        <img src="assests/images/Philly.jpg" alt="Philly Cheesesteak Pizza"> <!-- Add this image -->
+                        <div class="item-card-content">
+                            <h3>Philly Cheesesteak Pizza</h3>
+                            <p class="item-description-variety">
+                                Thinly sliced steak, sautéed onions and peppers, and a blend of cheeses.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.3 <span>(75+)</span>
+                            </div>
+                            <div class="item-cost">$19.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Add more pizza cards as needed -->
+                </div>
+            </div>
+
+            <a href="index.html#main-menus-section" class="back-to-menu-link"> <ion-icon name="arrow-back-outline"></ion-icon> Back to Menu</a>
+        </div>
+
+
+    <!-- Footer (copy from index.html or other pages if you have a standard one) -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart-list');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Find the parent card to get item details
+                    const card = event.target.closest('.item-card');
+                    
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPriceText = card.querySelector('.item-cost').textContent;
+                    const itemImage = card.querySelector('img').src;
+
+                    const cartItem = {
+                        name: itemName,
+                        price: parseFloat(itemPriceText.replace('$', '')),
+                        image: itemImage,
+                        quantity: 1
+                    };
+
+                    // Get existing cart from localStorage or initialize an empty array
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Check if item already exists in cart to avoid duplicates
+                    const existingItem = cart.find(item => item.name === cartItem.name);
+
+                    if (existingItem) {
+                        alert(`${itemName} is already in your cart!`);
+                    } else {
+                        cart.push(cartItem);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        alert(`Added ${itemName} to your cart!`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

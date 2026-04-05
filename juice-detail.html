@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Varieties - FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /* Reusing styles from other detail pages as they are generic for cards */
+        .main-content-area {
+            flex-grow: 1;
+            padding: 20px;
+            background-color:  rgba(128, 181, 243, 0.651);/* Or your preferred background */
+        }
+        .detail-container {
+            max-width: 100%;
+            margin: 30px auto;
+          background-color: rgb(241, 243, 235);
+            padding: 60px;
+            border-radius: 10px;
+           
+        }
+        .detail-container h1 {
+            color: var(--color1);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Grid Styles */
+        .item-grid {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            grid-auto-columns: 280px;
+            gap: 25px;
+            margin-top: 20px;
+            padding-right: 15px;
+            width: max-content;
+        }
+
+        .item-card {
+            background-color: #c0cbf0; /* White background for cards */
+            border-radius: 8px;
+            border: 1px solid #6d5b5b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-card-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-card-content h3 {
+            font-size: 1.4rem;
+            color: var(--blackcolor);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .item-description-variety {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .item-rating {
+            display: flex;
+            align-items: center;
+            color: #f39c12;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .item-rating ion-icon {
+            margin-right: 4px;
+        }
+
+        .item-rating span {
+            color: #777;
+            margin-left: 5px;
+        }
+
+        .item-cost {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--color1);
+            margin-bottom: 10px;
+        }
+        .btn-add-to-cart-list {
+            background-color: var(--color2);
+            color: var(--whitecolor);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: auto;
+        }
+        .btn-add-to-cart-list:hover {
+            background-color: #e9a800;
+        }
+        .back-to-menu-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--color2);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-to-menu-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <!--sidebar-->
+        <div class="logo">
+            <img src="assests/images/LOGO.png" alt="Logo">
+        </div>
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="help.html"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="detail-container">
+            <!-- Main Navbar -->
+            <div class="main-navbar">
+                <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+                <div class="search" >
+                    <input type="text" id="mainSearchInput" placeholder="Search for juices...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div><br>
+            <h1>Explore Our Refreshing Juice & Smoothie Varieties</h1>
+
+                <div class="item-grid">
+                    <!-- Juice 1: Orange Juice -->
+                    <div class="item-card">
+                        <img src="assests/images/orange.jpg" alt="Orange Juice">
+                        <div class="item-card-content">
+                            <h3>Fresh Orange Juice</h3>
+                            <p class="item-description-variety">
+                                Classic, freshly squeezed orange juice, packed with Vitamin C.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(400+)</span>
+                            </div>
+                            <div class="item-cost">$5.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 2: Apple Juice -->
+                    <div class="item-card">
+                        <img src="assests/images/apple.jpg" alt="Apple Juice">
+                        <div class="item-card-content">
+                            <h3>Crisp Apple Juice</h3>
+                            <p class="item-description-variety">
+                                Sweet and refreshing juice made from the finest crisp apples.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(350+)</span>
+                            </div>
+                            <div class="item-cost">$5.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 3: Green Detox -->
+                    <div class="item-card">
+                        <img src="assests/images/Smoothie-007.webp" alt="Green Detox Smoothie">
+                        <div class="item-card-content">
+                            <h3>Green Detox Smoothie</h3>
+                            <p class="item-description-variety">
+                                A healthy blend of spinach, kale, green apple, and cucumber.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(210+)</span>
+                            </div>
+                            <div class="item-cost">$7.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 4: Berry Blast -->
+                    <div class="item-card">
+                        <img src="assests/images/blueberry-blast-smoothie4.jpg" alt="Berry Blast Smoothie">
+                        <div class="item-card-content">
+                            <h3>Berry Blast Smoothie</h3>
+                            <p class="item-description-variety">
+                                A delicious mix of strawberries, blueberries, raspberries, and yogurt.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.9 <span>(500+)</span>
+                            </div>
+                            <div class="item-cost">$8.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 5: Mango Tango -->
+                    <div class="item-card">
+                        <img src="assests/images/tropical-tango.avif" alt="Mango Tango Smoothie">
+                        <div class="item-card-content">
+                            <h3>Tropical Mango Tango</h3>
+                            <p class="item-description-variety">
+                                An exotic blend of mango, pineapple, and a hint of coconut.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(380+)</span>
+                            </div>
+                            <div class="item-cost">$7.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 6: Carrot Ginger -->
+                    <div class="item-card">
+                        <img src="assests/images/Carrots-And-Carrot-Juice.jpg" alt="Carrot Ginger Juice">
+                        <div class="item-card-content">
+                            <h3>Carrot Ginger Elixir</h3>
+                            <p class="item-description-variety">
+                                An energizing mix of fresh carrots with a zesty ginger kick.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(180+)</span>
+                            </div>
+                            <div class="item-cost">$6.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 7: Watermelon Cooler -->
+                    <div class="item-card">
+                        <img src="assests/images/water.jpg" alt="Watermelon Cooler">
+                        <div class="item-card-content">
+                            <h3>Watermelon Cooler</h3>
+                            <p class="item-description-variety">
+                                The ultimate thirst-quencher. Pure, refreshing watermelon juice.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(420+)</span>
+                            </div>
+                            <div class="item-cost">$6.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 8: Pomegranate Power -->
+                    <div class="item-card">
+                        <img src="assests/images/pomegranate.jpg" alt="Pomegranate Juice">
+                        <div class="item-card-content">
+                            <h3>Pomegranate Power</h3>
+                            <p class="item-description-variety">
+                                Rich in antioxidants, this pomegranate juice is both healthy and tasty.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(150+)</span>
+                            </div>
+                            <div class="item-cost">$8.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 9: Pineapple Paradise -->
+                    <div class="item-card">
+                        <img src="assests/images/pineapple.avif" alt="Pineapple Juice">
+                        <div class="item-card-content">
+                            <h3>Pineapple Paradise</h3>
+                            <p class="item-description-variety">
+                                A sweet, tropical escape in a glass. Pure pineapple goodness.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(310+)</span>
+                            </div>
+                            <div class="item-cost">$7.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 10: Beetroot Boost -->
+                    <div class="item-card">
+                        <img src="assests/images/beetroot.jpeg" alt="Beetroot Juice">
+                        <div class="item-card-content">
+                            <h3>Beetroot Boost</h3>
+                            <p class="item-description-variety">
+                                An earthy and nutritious blend of beetroot, apple, and lemon.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.4 <span>(120+)</span>
+                            </div>
+                            <div class="item-cost">$7.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 11: Cucumber Mint Cooler -->
+                    <div class="item-card">
+                        <img src="assests/images/cuc um.jpg" alt="Cucumber Mint Cooler">
+                        <div class="item-card-content">
+                            <h3>Cucumber Mint Cooler</h3>
+                            <p class="item-description-variety">
+                                Incredibly refreshing and hydrating, with a cool hint of mint.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.7 <span>(250+)</span>
+                            </div>
+                            <div class="item-cost">$6.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 12: Grapefruit Glow -->
+                    <div class="item-card">
+                        <img src="assests/images/Grapefruit-Juice-square.jpeg" alt="Grapefruit Juice">
+                        <div class="item-card-content">
+                            <h3>Grapefruit Glow</h3>
+                            <p class="item-description-variety">
+                                A zesty and tangy juice to kickstart your day with a glow.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(110+)</span>
+                            </div>
+                            <div class="item-cost">$6.99</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 13: Kiwi Cooler -->
+                    <div class="item-card">
+                        <img src="assests/images/kiwi.png" alt="Kiwi Cooler">
+                        <div class="item-card-content">
+                            <h3>Kiwi Cooler</h3>
+                            <p class="item-description-variety">
+                                A vibrant and refreshing blend of sweet kiwi with a hint of cool mint.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.6 <span>(130+)</span>
+                            </div>
+                            <div class="item-cost">$7.25</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 14: Peach Paradise -->
+                    <div class="item-card">
+                        <img src="assests/images/peach.jpg" alt="Peach Paradise">
+                        <div class="item-card-content">
+                            <h3>Peach Paradise</h3>
+                            <p class="item-description-variety">
+                                Sweet, juicy peaches blended into a smooth, delightful summer drink.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.8 <span>(200+)</span>
+                            </div>
+                            <div class="item-cost">$7.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 15: Celery Cleanse -->
+                    <div class="item-card">
+                        <img src="assests/images/Celery.jpg" alt="Celery Cleanse">
+                        <div class="item-card-content">
+                            <h3>Celery Cleanse</h3>
+                            <p class="item-description-variety">
+                                A cleansing mix of fresh celery, crisp green apple, and a touch of ginger.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.3 <span>(90+)</span>
+                            </div>
+                            <div class="item-cost">$8.00</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Juice 16: Lemon-Lime Zest -->
+                    <div class="item-card">
+                        <img src="assests/images/Lemon-Ginger-Blast-Juice-Recipe.webp" alt="Lemon-Lime Zest">
+                        <div class="item-card-content">
+                            <h3>Lemon-Lime Zest</h3>
+                            <p class="item-description-variety">
+                                A super tangy and revitalizing blast of fresh lemons and limes.
+                            </p>
+                            <div class="item-rating">
+                                <ion-icon name="star"></ion-icon> 4.5 <span>(140+)</span>
+                            </div>
+                            <div class="item-cost">$6.50</div>
+                            <button class="btn-add-to-cart-list">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="index.html#main-menus-section" class="back-to-menu-link"> <ion-icon name="arrow-back-outline"></ion-icon> Back to Menu</a>
+        </div>
+
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assests/js/script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart-list');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Find the parent card to get item details
+                    const card = event.target.closest('.item-card');
+                    
+                    const itemName = card.querySelector('h3').textContent;
+                    const itemPriceText = card.querySelector('.item-cost').textContent;
+                    const itemImage = card.querySelector('img').src;
+
+                    const cartItem = {
+                        name: itemName,
+                        price: parseFloat(itemPriceText.replace('$', '')),
+                        image: itemImage,
+                        quantity: 1
+                    };
+
+                    // Get existing cart from localStorage or initialize an empty array
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Check if item already exists in cart to avoid duplicates
+                    const existingItem = cart.find(item => item.name === cartItem.name);
+
+                    if (existingItem) {
+                        alert(`${itemName} is already in your cart!`);
+                    } else {
+                        cart.push(cartItem);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        alert(`Added ${itemName} to your cart!`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

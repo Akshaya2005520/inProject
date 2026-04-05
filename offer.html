@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFix25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assests/css/style.css"/> <!-- General styles -->
+    <link rel="stylesheet" href="assests/css/offer.css"/> <!-- Styles specific to this page -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        offers-page-container {
+    padding: 20px;
+    background-color: var(--greycolor); /* Light background for the content area */
+}
+
+.offers-main-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, var(--color1), var(--color2));
+    color: var(--whitecolor);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.offers-main-header h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.offers-main-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.offer-card {
+    background-color: var(--whitecolor);
+    border-radius: 10px;
+    border: 1px solid #6d5b5b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.856);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* For animation */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.offer-card.animate { /* Style when card is animated in */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.offer-card:hover {
+                                                                                                                                                                                                                                                                 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.offer-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-title {
+    font-size: 1.6rem;
+    color: var(--color1);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.offer-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.offer-validity {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.btn-claim-offer {
+    background-color: var(--color2);
+    color: var(--blackcolor);
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start; /* Aligns button to the start if details flex container */
+}
+
+.btn-claim-offer:hover {
+    background-color: #e9a800; /* Darker shade of color2 */
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+    <!--sidebar-->
+   
+        <!--logo-->
+      <div class="logo">
+
+     
+            <img src="assests/images/LOGO.png"alt="Logo">
+        </div>
+        <!--title-->
+       
+            
+      
+        <!--menus-->
+        <div class="sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>HOME</a>
+            <a href="#"><ion-icon name="location-outline"></ion-icon>LOCATION</a>
+            <a href="offer.html"><ion-icon name="sparkles-outline"></ion-icon>TODAY OFFERS</a>
+            <a href="contact-us.html"><ion-icon name="chatbubbles-outline"></ion-icon>CONTACT-US</a>
+            <a href="#"><ion-icon name="help-circle-outline"></ion-icon>HELP</a>
+           
+        </div>
+        <div class="profile">
+            <a class="cart" href="cart.html"><ion-icon name="cart-outline"></ion-icon></a>
+            <a class="user" href="login.html"><ion-icon name="person-outline"></ion-icon></a> 
+        </div>
+       
+    </div>
+
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on ph-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--searchbar (optional for offers page)-->
+            <div class="search">
+                <input type="text" placeholder="Search offers...">
+                <button class="search-btn">Search</button>
+            </div>
+        </div><br>
+
+        <div class="offers-page-container">
+            <header class="offers-main-header">
+                <h1>Today's Special Offers</h1>
+                <p>Don't miss out on these amazing deals, available for a limited time!</p>
+            </header>
+
+            <div class="offers-grid">
+                <!-- Offer Card 1 -->
+                <div class="offer-card">
+                    <img src="assests/images/buy-one-get-one-free.png" alt="Buy One Get One Pizza" class="offer-image">
+                    <div class="offer-details">
+                        <h3 class="offer-title">BOGO Pizza Wednesdays!</h3>
+                        <p class="offer-description">Buy any large pizza on Wednesday and get a medium classic pizza absolutely FREE!</p>
+                        <p class="offer-validity">Valid: Wednesdays Only</p>
+                        <button class="btn btn-claim-offer">Claim Offer</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 2 -->
+                <div class="offer-card">
+                    <img src="assests/images/combo1.png" alt="Lunch Combo Deal" class="offer-image">
+                    <div class="offer-details">
+                        <h3 class="offer-title">Super Lunch Combo</h3>
+                        <p class="offer-description">Get a burger, fries, and a drink for just $9.99. Perfect for a quick and tasty lunch.</p>
+                        <p class="offer-validity">Valid: Weekdays, 12 PM - 3 PM</p>
+                        <button class="btn btn-claim-offer">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 3 -->
+                <div class="offer-card">
+                    <img src="assests/images/20.jpg" alt="Dessert Discount" class="offer-image">
+                    <div class="offer-details">
+                        <h3 class="offer-title">Sweet Tooth Special: 20% Off Desserts</h3>
+                        <p class="offer-description">Indulge your sweet cravings! Get 20% off on all desserts when you spend $25 or more.</p>
+                        <p class="offer-validity">Valid: All Week</p>
+                        <button class="btn btn-claim-offer">View Desserts</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 4 -->
+                <div class="offer-card">
+                    <img src="assests/images/family.webp" alt="Family Feast Deal" class="offer-image">
+                    <div class="offer-details">
+                        <h3 class="offer-title">Family Feast Pack</h3>
+                        <p class="offer-description">2 Large Pizzas, 1 Side, and a 2L Drink for only $29.99. Great for family nights!</p>
+                        <p class="offer-validity">Valid: Weekends Only</p>
+                        <button class="btn btn-claim-offer">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 5 -->
+                <div class="offer-card">
+                    <img src="assests/images/mimos.jpg" alt="Weekend Brunch Special" class="offer-image"> <!-- Create offer_weekend_brunch.jpg -->
+                    <div class="offer-details">
+                        <h3 class="offer-title">Weekend Brunch Bonanza</h3>
+                        <p class="offer-description">Enjoy our special brunch menu with unlimited mimosas for just $24.99 per person!</p>
+                        <p class="offer-validity">Valid: Sat & Sun, 10 AM - 2 PM</p>
+                        <button class="btn btn-claim-offer">Book Table</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 6 -->
+                <div class="offer-card">
+                    <img src="assests/images/free.jpg" alt="Free Delivery Offer" class="offer-image"> <!-- Create offer_free_delivery.jpg -->
+                    <div class="offer-details">
+                        <h3 class="offer-title">Free Delivery Fridays!</h3>
+                        <p class="offer-description">Get your order delivered for FREE every Friday when you spend $30 or more. Use code: FREEFRIDAY</p>
+                        <p class="offer-validity">Valid: Fridays Only, Min. $30 Order</p>
+                        <button class="btn btn-claim-offer">Shop Now</button>
+                    </div>
+                </div>
+
+                <!-- Offer Card 7 -->
+                <div class="offer-card">
+                    <img src="assests/images/Student-Meal-22.jpg" alt="Student Discount" class="offer-image"> <!-- Create offer_student_discount.jpg -->
+                    <div class="offer-details">
+                        <h3 class="offer-title">Student Special: 15% Off</h3>
+                        <p class="offer-description">Students get 15% off their entire order! Show your valid student ID to avail.</p>
+                        <p class="offer-validity">Valid: All Days, with Student ID</p>
+                        <button class="btn btn-claim-offer">Learn More</button>
+                    </div>
+                </div>
+                 <!-- Add more offer cards as needed -->
+            </div>
+        </div>
+
+    </div> <!-- End main -->
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="footer-logo-area">
+                <img src="assests/images/LOGO.png" alt="FoodFix25 Logo" class="footer-logo">
+                <p>Your favorite food, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="offer.html">Today's Offers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodFix25. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+   <script src="assests/js/script.js" defer></script>
+</html>
